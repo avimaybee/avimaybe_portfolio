@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
 
 const Contact = () => {
   return (
@@ -30,27 +33,27 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          <input
+          <Input
             type="text"
             placeholder="Your Name"
             className="p-4 rounded-lg bg-neutral-off-white text-deep-sky-blue placeholder-desaturated-gray focus:outline-none focus:ring-2 focus:ring-comet-pink-peach focus:shadow-glow-sm transition-all duration-300"
           />
-          <input
+          <Input
             type="email"
             placeholder="Your Email"
             className="p-4 rounded-lg bg-neutral-off-white text-deep-sky-blue placeholder-desaturated-gray focus:outline-none focus:ring-2 focus:ring-comet-pink-peach focus:shadow-glow-sm transition-all duration-300"
           />
-          <textarea
+          <Textarea
             placeholder="Your Message"
             rows="6"
             className="p-4 rounded-lg bg-neutral-off-white text-deep-sky-blue placeholder-desaturated-gray focus:outline-none focus:ring-2 focus:ring-comet-pink-peach focus:shadow-glow-sm transition-all duration-300"
-          ></textarea>
-          <button
+          ></Textarea>
+          <Button
             type="submit"
             className="px-8 py-3 bg-comet-pink-peach text-deep-sky-blue rounded-full text-lg font-medium shadow-glow-sm hover:bg-soft-gold transition-all duration-400 ease-in-out transform hover:-translate-y-1"
           >
             Send Message
-          </button>
+          </Button>
         </motion.form>
 
         <motion.div

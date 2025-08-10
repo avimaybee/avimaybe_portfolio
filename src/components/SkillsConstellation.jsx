@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { ReactSVG } from 'react-svg';
 import skillsData from '../data/skills.json';
 import { projects } from '../data/content';
+import { Popover, PopoverTrigger, PopoverContent } from '../components/ui/popover'; // Import Shadcn Popover
 
 const SkillsConstellation = ({ prefersReducedMotion }) => {
-  const [activeSkill, setActiveSkill] = useState(null);
   const svgRef = useRef(null);
 
   // Calculate path length for animation
@@ -35,14 +35,6 @@ const SkillsConstellation = ({ prefersReducedMotion }) => {
       setPathLengths(newPathLengths);
     }
   }, []);
-
-  const handleSkillHover = (skill) => {
-    setActiveSkill(skill);
-  };
-
-  const handleSkillLeave = () => {
-    setActiveSkill(null);
-  };
 
   const transition = prefersReducedMotion ? { duration: 0 } : { duration: 2, ease: "easeInOut" };
   const springTransition = prefersReducedMotion ? { type: "tween", duration: 0 } : { type: "spring", stiffness: 200 };
@@ -87,56 +79,46 @@ const SkillsConstellation = ({ prefersReducedMotion }) => {
               })
             ))}
 
-            {/* Render stars */}
+            {/* Render stars as PopoverTriggers */}
             {skillsData.map((skill, index) => (
-              <motion.circle
-                key={skill.id}
-                cx={skill.position.x}
-                cy={skill.position.y}
-                r="8"
-                fill="#fafbff"
-                className="cursor-pointer"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={prefersReducedMotion ? { duration: 0 } : { delay: index * 0.1, type: "spring", stiffness: 200 }}
-                onHoverStart={() => handleSkillHover(skill)}
-                onHoverEnd={handleSkillLeave}
-              />
+              <Popover key={skill.id}>
+                <PopoverTrigger asChild>
+                  <motion.circle
+                    cx={skill.position.x}
+                    cy={skill.position.y}
+                    r="8"
+                    fill="#fafbff"
+                    className="cursor-pointer"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={prefersReducedMotion ? { duration: 0 } : { delay: index * 0.1, type: "spring", stiffness: 200 }}
+                  />
+                </PopoverTrigger>
+                <PopoverContent
+                  className="bg-deep-sky-blue text-comet-white p-4 rounded-lg shadow-lg glass-sm"
+                  style={{
+                    zIndex: 100,
+                  }}
+                >
+                  <h4 className="font-bold text-lg mb-2">{skill.name}</h4>
+                  <p className="text-sm">Level: {skill.details.level}</p>
+                  <p className="text-sm">AI Impact: {skill.details.aiImpact}</p>
+                  {skill.details.projects.length > 0 && (
+                    <div className="mt-2">
+                      <p className="text-sm font-semibold">Related Projects:</p>
+                      <ul className="list-disc list-inside text-sm">
+                        {skill.details.projects.map(projectId => {
+                          const project = projects.find(p => p.id === projectId);
+                          return project ? <li key={projectId}>{project.title}</li> : null;
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </PopoverContent>
+              </Popover>
             ))}
           </svg>
         </div>
-
-        {/* Tooltip */}
-        {activeSkill && (
-          <motion.div
-            className="absolute bg-deep-sky-blue text-comet-white p-4 rounded-lg shadow-lg glass-sm"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={tooltipTransition}
-            style={{
-              top: activeSkill.position.y + 20, // Adjust position relative to star
-              left: activeSkill.position.x + 20,
-              transform: 'translate(-50%, -50%)', // Center the tooltip
-              zIndex: 100,
-            }}
-          >
-            <h4 className="font-bold text-lg mb-2">{activeSkill.name}</h4>
-            <p className="text-sm">Level: {activeSkill.details.level}</p>
-            <p className="text-sm">AI Impact: {activeSkill.details.aiImpact}</p>
-            {activeSkill.details.projects.length > 0 && (
-              <div className="mt-2">
-                <p className="text-sm font-semibold">Related Projects:</p>
-                <ul className="list-disc list-inside text-sm">
-                  {activeSkill.details.projects.map(projectId => {
-                    const project = projects.find(p => p.id === projectId);
-                    return project ? <li key={projectId}>{project.title}</li> : null;
-                  })}
-                </ul>
-              </div>
-            )}
-          </motion.div>
-        )}
       </div>
     </section>
   );

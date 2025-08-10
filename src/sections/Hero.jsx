@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import StarfieldLayer from '../components/StarfieldLayer';
+import { Button } from '../components/ui/button';
 
 const Hero = ({ prefersReducedMotion }) => {
   const { scrollYProgress } = useScroll();
@@ -57,15 +58,18 @@ const Hero = ({ prefersReducedMotion }) => {
           transition={textTransition}
         >
           Leveraging cutting-edge AI to deliver unparalleled front-end development, design, and content solutions.
-        </motion.p>
-        <motion.button
-          className="px-8 py-3 bg-night-gradient-teal-start text-comet-white rounded-full text-lg font-medium shadow-glow-sm hover:bg-night-gradient-teal-end hover:shadow-glow-lg transition-shadow duration-400 ease-in-out transform hover:-translate-y-1"
+        </motion.g>
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={buttonTransition}
         >
-          Explore My Work
-        </motion.button>
+          <Button
+            className="px-8 py-3 bg-night-gradient-teal-start text-comet-white rounded-full text-lg font-medium shadow-glow-sm hover:bg-night-gradient-teal-end hover:shadow-glow-lg transition-shadow duration-400 ease-in-out transform hover:-translate-y-1"
+          >
+            Explore My Work
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

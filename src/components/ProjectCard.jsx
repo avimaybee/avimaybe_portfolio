@@ -1,5 +1,6 @@
 import AIEvidence from './AIEvidence';
 import { motion } from 'framer-motion';
+import { Button } from '../components/ui/button';
 
 const ProjectCard = ({ project }) => {
   return (
@@ -23,24 +24,24 @@ const ProjectCard = ({ project }) => {
 
       <div className="flex justify-between mt-4 space-x-4">
         {project.liveLink && (
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            asChild
             className="flex-1 text-center px-4 py-2 bg-deep-sky-blue text-comet-white rounded-full text-sm font-medium shadow-md hover:bg-night-gradient-teal-end transition-all duration-300"
           >
-            Live Demo
-          </a>
+            <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+              Live Demo
+            </a>
+          </Button>
         )}
         {project.githubLink && (
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            asChild
             className="flex-1 text-center px-4 py-2 bg-warm-earth-brown text-comet-white rounded-full text-sm font-medium shadow-md hover:bg-soft-gold transition-all duration-300"
           >
-            GitHub Repo
-          </a>
+            <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+              GitHub Repo
+            </a>
+          </Button>
         )}
       </div>
     </motion.div>

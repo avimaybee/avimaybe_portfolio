@@ -9,7 +9,6 @@ import About from './sections/About';
 import Contact from './sections/Contact';
 import CelestialScroll from './components/CelestialScroll';
 import SkillsConstellation from './components/SkillsConstellation';
-import AIDemoOrb from './components/AIDemoOrb';
 import Loader from './components/Loader';
 
 function App() {
@@ -81,7 +80,6 @@ function App() {
         </Suspense>
       </main>
       <Footer />
-      <AIDemoOrb prefersReducedMotion={prefersReducedMotion} />
     </div>
   );
 }

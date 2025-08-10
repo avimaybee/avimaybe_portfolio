@@ -1,3 +1,5 @@
+import { Button } from '../components/ui/button';
+
 const Footer = () => {
   return (
     <footer className="bg-night-gradient-teal-end p-8 mt-16 text-comet-white">
@@ -25,6 +27,19 @@ const Footer = () => {
         </div>
 
         <p className="text-center text-sm opacity-80">&copy; 2025 Celestial Portfolio. All rights reserved.</p>
+
+        <div className="flex justify-center space-x-6 text-3xl">
+          <Button asChild variant="link" className="text-comet-white hover:text-comet-pink-peach transition-colors duration-300" aria-label="LinkedIn">
+            <a href="#"><i className="fab fa-linkedin"></i></a>
+          </Button>
+          <Button asChild variant="link" className="text-comet-white hover:text-comet-pink-peach transition-colors duration-300" aria-label="GitHub">
+            <a href="#"><i className="fab fa-github"></i></a>
+          </Button>
+          <Button asChild variant="link" className="text-comet-white hover:text-comet-pink-peach transition-colors duration-300" aria-label="Twitter">
+            <a href="#"><i className="fab fa-twitter"></i></a>
+          </Button>
+          {/* Add more social media icons as needed */}
+        </div>
       </div>
     </footer>
   );
