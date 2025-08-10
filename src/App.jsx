@@ -5,7 +5,6 @@ import Projects from './sections/Projects';
 import About from './sections/About';
 import Contact from './sections/Contact';
 import CelestialScroll from './components/CelestialScroll';
-
 function App() {
   return (
     <div className="flex flex-col min-h-screen">

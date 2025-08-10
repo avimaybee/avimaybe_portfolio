@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans bg-primary-deep-sky-blue text-comet-white;
+  @apply font-sans bg-deep-sky-blue text-comet-white;
 }
 
 h1, h2, h3, h4, h5, h6 {

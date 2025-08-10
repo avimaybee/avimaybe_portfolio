@@ -1,13 +1,31 @@
 const Footer = () => {
   return (
-    <footer className="bg-night-gradient-teal-end p-4 mt-8">
-      <div className="flex justify-center items-center space-x-4 mb-4">
-        <p className="text-comet-white">Built with:</p>
-        <span className="text-comet-white font-bold">React</span>
-        <span className="text-comet-white font-bold">Vite</span>
-        <span className="text-comet-white font-bold">Tailwind CSS</span>
+    <footer className="bg-night-gradient-teal-end p-8 mt-16 text-comet-white">
+      <div className="container mx-auto flex flex-col items-center space-y-8">
+        {/* Collaborated With Section */}
+        <div className="w-full text-center">
+          <h3 className="text-xl font-semibold mb-4">Collaborated With</h3>
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {/* Placeholder for logos - replace with actual image tags */}
+            <span className="text-lg font-medium opacity-75">Brand A</span>
+            <span className="text-lg font-medium opacity-75">Brand B</span>
+            <span className="text-lg font-medium opacity-75">Brand C</span>
+          </div>
+        </div>
+
+        {/* Built With Section */}
+        <div className="w-full text-center">
+          <h3 className="text-xl font-semibold mb-4">Built With</h3>
+          <div className="flex flex-wrap justify-center items-center gap-4">
+            <span className="px-4 py-2 bg-deep-sky-blue rounded-full text-sm font-medium shadow-md">React</span>
+            <span className="px-4 py-2 bg-deep-sky-blue rounded-full text-sm font-medium shadow-md">Vite</span>
+            <span className="px-4 py-2 bg-deep-sky-blue rounded-full text-sm font-medium shadow-md">Tailwind CSS</span>
+            <span className="px-4 py-2 bg-deep-sky-blue rounded-full text-sm font-medium shadow-md">Framer Motion</span>
+          </div>
+        </div>
+
+        <p className="text-center text-sm opacity-80">&copy; 2025 Celestial Portfolio. All rights reserved.</p>
       </div>
-      <p className="text-center text-comet-white">&copy; 2025 Celestial Portfolio</p>
     </footer>
   );
 };

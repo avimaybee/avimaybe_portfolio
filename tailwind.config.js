@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-deep-sky-blue': '#20406a',
+        'deep-sky-blue': '#20406a',
         'night-gradient-teal-start': '#20406a',
         'night-gradient-teal-end': '#427384',
         'comet-white': '#fafbff',
@@ -18,20 +18,26 @@ export default {
         'desaturated-gray': '#6c757d',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
-      },
-      spacing: {
-        '128': '32rem',
+        header: ['Playfair Display', 'serif'],
+        body: ['Inter', 'sans-serif'],
       },
       borderRadius: {
-        '4xl': '2rem',
+        'xl': '8px', // For cards
+        '2xl': '16px', // For cards
+        'full': '9999px', // For pill-shaped buttons
       },
       boxShadow: {
-        'glow': '0 0 15px rgba(236, 215, 207, 0.5)',
+        'glow-sm': '0 0 15px rgba(236, 215, 207, 0.5)', // For buttons
+        'card': '0 4px 20px rgba(0, 0, 0, 0.05)', // For cards
       },
-      transitionTimingFunction: {
-        'in-out': 'ease-in-out',
+      transitionProperty: {
+        'colors': 'background-color, border-color, color, fill, stroke',
+        'transform': 'transform',
+        'shadow': 'box-shadow',
+      },
+      transitionDuration: {
+        '200': '200ms',
+        '400': '400ms',
       },
     },
   },
