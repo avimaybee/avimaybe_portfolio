@@ -40,30 +40,32 @@ function App() {
         <meta property="og:url" content="https://yourportfolio.com" /> {/* Replace with your actual deployed URL */}
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">
-          {{
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "[Your Name]", // Replace with your name
-            "url": "https://yourportfolio.com", // Replace with your actual deployed URL
-            "image": "/assets/headshot.png", // Replace with your headshot image
-            "sameAs": [
-              "https://linkedin.com/in/[your-linkedin]", // Replace with your LinkedIn profile
-              "https://github.com/[your-github]", // Replace with your GitHub profile
-              "https://twitter.com/[your-twitter]" // Replace with your Twitter profile
-            ],
-            "jobTitle": "AI-Enhanced Creative Professional",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Self-Employed"
-            },
-            "alumniOf": "[Your University/College]", // Optional
-            "hasOccupation": {
-              "@type": "Occupation",
-              "name": "Front-end Developer",
-              "description": "Leveraging AI to build immersive web experiences.",
-              "skills": "React, Tailwind CSS, Framer Motion, AI Prompt Engineering, UI/UX Design, Content Creation"
-            }
-          }}
+          {`
+            ${JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "[Your Name]", // Replace with your name
+              "url": "https://yourportfolio.com", // Replace with your actual deployed URL
+              "image": "/assets/headshot.png", // Replace with your headshot image
+              "sameAs": [
+                "https://linkedin.com/in/[your-linkedin]", // Replace with your LinkedIn profile
+                "https://github.com/[your-github]", // Replace with your GitHub profile
+                "https://twitter.com/[your-twitter]" // Replace with your Twitter profile
+              ],
+              "jobTitle": "AI-Enhanced Creative Professional",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Self-Employed"
+              },
+              "alumniOf": "[Your University/College]", // Optional
+              "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Front-end Developer",
+                "description": "Leveraging AI to build immersive web experiences.",
+                "skills": "React, Tailwind CSS, Framer Motion, AI Prompt Engineering, UI/UX Design, Content Creation"
+              }
+            }, null, 2)}
+          `}
         </script>
       </Helmet>
       {isLoading && <Loader />}
