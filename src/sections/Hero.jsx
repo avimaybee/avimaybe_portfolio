@@ -58,7 +58,7 @@ const Hero = ({ prefersReducedMotion }) => {
           transition={textTransition}
         >
           Leveraging cutting-edge AI to deliver unparalleled front-end development, design, and content solutions.
-        </motion.g>
+        </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
