@@ -17,39 +17,41 @@ export default {
   			'soft-gold': '#d4af37',
   			'neutral-off-white': '#f8f8f8',
   			'desaturated-gray': '#6c757d',
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
+
+  			// Shadcn UI overrides
+  			background: '#20406a', // deep-sky-blue
+  			foreground: '#fafbff', // comet-white
   			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
+  				DEFAULT: '#427384', // night-gradient-teal-end
+  				foreground: '#fafbff' // comet-white
   			},
   			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
+  				DEFAULT: '#20406a', // deep-sky-blue
+  				foreground: '#fafbff' // comet-white
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				DEFAULT: '#ecd7cf', // comet-pink-peach
+  				foreground: '#20406a' // deep-sky-blue
   			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
+  				DEFAULT: '#b08968', // warm-earth-brown
+  				foreground: '#fafbff' // comet-white
   			},
   			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
-  				foreground: 'hsl(var(--muted-foreground))'
+  				DEFAULT: '#6c757d', // desaturated-gray
+  				foreground: '#fafbff' // comet-white
   			},
   			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
+  				DEFAULT: '#d4af37', // soft-gold
+  				foreground: '#20406a' // deep-sky-blue
   			},
   			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
+  				DEFAULT: '#ef4444', // default red
+  				foreground: '#fafbff' // comet-white
   			},
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
+  			border: '#ecd7cf', // comet-pink-peach
+  			input: '#f8f8f8', // neutral-off-white
+  			ring: '#ecd7cf', // comet-pink-peach
   			chart: {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
