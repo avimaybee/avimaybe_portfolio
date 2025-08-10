@@ -1,0 +1,57 @@
+[
+  {
+    "id": "react",
+    "name": "React Development",
+    "position": { "x": 150, "y": 100 },
+    "connections": ["ai-prompting", "ui-ux-design"],
+    "details": {
+      "level": "Expert",
+      "aiImpact": "Used GPT-4 for 60% faster component generation and debugging.",
+      "projects": [1, 2]
+    }
+  },
+  {
+    "id": "ai-prompting",
+    "name": "AI Prompt Engineering",
+    "position": { "x": 400, "y": 50 },
+    "connections": ["react", "content-creation"],
+    "details": {
+      "level": "Advanced",
+      "aiImpact": "Crafted prompts for Midjourney and ChatGPT to generate design assets and content outlines.",
+      "projects": [1, 2, 3]
+    }
+  },
+  {
+    "id": "ui-ux-design",
+    "name": "UI/UX Design",
+    "position": { "x": 250, "y": 300 },
+    "connections": ["react", "figma"],
+    "details": {
+      "level": "Expert",
+      "aiImpact": "Utilized AI for mood board generation, color palette exploration, and user flow optimization.",
+      "projects": [3]
+    }
+  },
+  {
+    "id": "content-creation",
+    "name": "Content Creation",
+    "position": { "x": 550, "y": 200 },
+    "connections": ["ai-prompting"],
+    "details": {
+      "level": "Advanced",
+      "aiImpact": "AI-assisted in drafting blog posts, marketing copy, and project descriptions, enhancing speed and creativity.",
+      "projects": [1]
+    }
+  },
+  {
+    "id": "figma",
+    "name": "Figma Proficiency",
+    "position": { "x": 350, "y": 450 },
+    "connections": ["ui-ux-design"],
+    "details": {
+      "level": "Expert",
+      "aiImpact": "Leveraged AI plugins within Figma for rapid prototyping and design system component generation.",
+      "projects": [3]
+    }
+  }
+]

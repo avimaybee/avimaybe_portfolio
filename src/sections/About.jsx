@@ -32,26 +32,42 @@ const About = () => {
         >
           <h3 className="text-3xl font-header font-bold mb-8">AI as my Co-Pilot: The Creative Process</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-comet-white">
-            <div className="flex flex-col items-center">
+            <motion.div
+              className="flex flex-col items-center cursor-pointer"
+              whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(236, 215, 207, 0.5)' }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <span className="text-5xl mb-4">💡</span> {/* Idea Icon */}
               <h4 className="font-bold text-xl mb-2">1. Idea</h4>
               <p className="text-sm opacity-80">Starting with a creative spark and defining the core problem or vision.</p>
-            </div>
-            <div className="flex flex-col items-center">
+            </motion.div>
+            <motion.div
+              className="flex flex-col items-center cursor-pointer"
+              whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(236, 215, 207, 0.5)' }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <span className="text-5xl mb-4">🧠</span> {/* AI Brainstorm Icon */}
               <h4 className="font-bold text-xl mb-2">2. AI Brainstorm</h4>
               <p className="text-sm opacity-80">Leveraging AI tools for rapid ideation, research, and initial concept generation.</p>
-            </div>
-            <div className="flex flex-col items-center">
+            </motion.div>
+            <motion.div
+              className="flex flex-col items-center cursor-pointer"
+              whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(236, 215, 207, 0.5)' }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <span className="text-5xl mb-4">✍️</span> {/* Human Refinement Icon */}
               <h4 className="font-bold text-xl mb-2">3. Human Refinement</h4>
               <p className="text-sm opacity-80">Applying expert human judgment, creativity, and precision to refine AI outputs.</p>
-            </div>
-            <div className="flex flex-col items-center">
+            </motion.div>
+            <motion.div
+              className="flex flex-col items-center cursor-pointer"
+              whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(236, 215, 207, 0.5)' }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <span className="text-5xl mb-4">✨</span> {/* Final Output Icon */}
               <h4 className="font-bold text-xl mb-2">4. Final Output</h4>
               <p className="text-sm opacity-80">Delivering a polished, high-impact, and truly unique digital solution.</p>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

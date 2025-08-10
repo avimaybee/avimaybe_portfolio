@@ -28,6 +28,7 @@ export default {
       },
       boxShadow: {
         'glow-sm': '0 0 15px rgba(236, 215, 207, 0.5)', // For buttons
+        'glow-lg': '0 0 30px rgba(236, 215, 207, 0.7)', // Larger, softer glow for buttons
         'card': '0 4px 20px rgba(0, 0, 0, 0.05)', // For cards
       },
       transitionProperty: {
@@ -41,5 +42,21 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [function ({ addUtilities }) {
+    const newUtilities = {
+      '.glass': {
+        'backdrop-filter': 'blur(16px)',
+        'background-color': 'rgba(255, 255, 255, 0.05)',
+        'border': '1px solid rgba(255, 255, 255, 0.1)',
+        'border-radius': '16px',
+      },
+      '.glass-sm': {
+        'backdrop-filter': 'blur(8px)',
+        'background-color': 'rgba(255, 255, 255, 0.03)',
+        'border': '1px solid rgba(255, 255, 255, 0.08)',
+        'border-radius': '12px',
+      },
+    };
+    addUtilities(newUtilities, ['responsive']);
+  }],
 }

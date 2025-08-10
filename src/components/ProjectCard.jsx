@@ -1,17 +1,22 @@
 import AIEvidence from './AIEvidence';
+import { motion } from 'framer-motion';
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="bg-neutral-off-white rounded-2xl shadow-card p-6 flex flex-col h-full">
-      <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-xl mb-4" />
-      <h3 className="text-2xl font-header font-bold text-deep-sky-blue mb-2">{project.title}</h3>
-      <p className="text-desaturated-gray text-sm mb-4 flex-grow">{project.description}</p>
+    <motion.div
+      className="glass rounded-xl shadow-card p-6 flex flex-col h-full bg-gradient-to-br from-transparent to-night-gradient-teal-end/10"
+      whileHover={{ y: -8, scale: 1.03 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-xl mb-4" loading="lazy" />
+      <h3 className="text-2xl font-header font-bold text-comet-white mb-2">{project.title}</h3>
+      <p className="text-comet-white text-sm mb-4 flex-grow">{project.description}</p>
 
       <div className="mb-4">
-        <p className="text-deep-sky-blue text-sm font-semibold">Category: <span className="font-normal">{project.category}</span></p>
-        <p className="text-deep-sky-blue text-sm font-semibold">Technologies: <span className="font-normal">{project.technologies.join(', ')}</span></p>
-        <p className="text-deep-sky-blue text-sm font-semibold">AI Tools Used: <span className="font-normal">{project.aiToolsUsed.join(', ')}</span></p>
-        <p className="text-deep-sky-blue text-sm font-semibold">AI Impact: <span className="font-normal">{project.aiImpact}</span></p>
+        <p className="text-comet-white text-sm font-semibold">Category: <span className="font-normal">{project.category}</span></p>
+        <p className="text-comet-white text-sm font-semibold">Technologies: <span className="font-normal">{project.technologies.join(', ')}</span></p>
+        <p className="text-comet-white text-sm font-semibold">AI Tools Used: <span className="font-normal">{project.aiToolsUsed.join(', ')}</span></p>
+        <p className="text-comet-white text-sm font-semibold">AI Impact: <span className="font-normal">{project.aiImpact}</span></p>
       </div>
 
       {project.aiEvidence && <AIEvidence evidence={project.aiEvidence} />}
@@ -38,7 +43,7 @@ const ProjectCard = ({ project }) => {
           </a>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
